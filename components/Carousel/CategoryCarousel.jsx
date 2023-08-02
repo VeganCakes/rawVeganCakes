@@ -38,7 +38,7 @@ const CategoryCarousel = ({
           alt={images[index].name}
           placeholder="blur"
           blurDataURL="/"
-          className="w-full h-[460px] overflow-clip object-fit"
+          className="w-full h-[260px] overflow-clip object-fit"
         />
         <div className="absolute bottom-1/2 z-30 w-full ">
           <div className="mx-2 md:mx-10 flex items-center justify-between text-brand-white">
