@@ -29,6 +29,19 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en" suppressHydrationWarning>
         <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-NXGZKG81GZ"
+          ></script>
+          <script>
+            {`
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NXGZKG81GZ') `}
+          </script>
+
           <title>raw_vegan_cake</title>
           <meta
             name="description"
@@ -39,22 +52,6 @@ export default function RootLayout({ children }) {
             content="raw_vegan_cake | gluten_free_cake | raw_vegan_cake_north_london | gluten_free_cake_north_london | raw_vegan_cake_hertfordshire | gluten_free_cake_hertfordshire"
           />
           <meta name="robots" content="index, follows" />
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-NXGZKG81GZ"
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-NXGZKG81GZ', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
         </Head>
         <body className="layout-body">
           <Providers>
