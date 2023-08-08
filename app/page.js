@@ -80,8 +80,8 @@ export default async function Home({ children }) {
           </div>
         </div>
       </div>
-        <Slider />
-      <div className="w-full h-full flex flex-col items-center mt-4">
+      <Slider />
+      <div className="w-full h-full flex flex-col items-center mt-2">
         <h3 className="font-bold text-2xl text-center my-6 md:mt-16 md:mb-6">
           Our Recommendations
         </h3>
