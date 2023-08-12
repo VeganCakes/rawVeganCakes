@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import image1 from "../../images/carousel/mini_slider/raw_vegan _cake-009.jpg";
 import image2 from "../../images/carousel/mini_slider/raw_vegan _cake-010.jpg";
-import image3 from "../../images/carousel/mini_slider/raw_vegan _cake-011.jpg";
+import image3 from "../../images/carousel/mini_slider/raw_vegan _cake-0011.jpg";
 import image4 from "../../images/carousel/mini_slider/raw_vegan _cake-012.jpg";
 import image5 from "../../images/carousel/mini_slider/raw_vegan _cake-013.jpg";
 import image6 from "../../images/carousel/mini_slider/raw_vegan_cake-014.jpg";
