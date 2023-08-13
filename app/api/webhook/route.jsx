@@ -3,7 +3,7 @@ import { buffer } from "micro";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export config = {
+export const config = {
   api: {
     bodyParser: false,
   },
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
 
         break;
       }
-      
+
       case "payment_intent.succeeded": {
         const session = event.data.object;
 
