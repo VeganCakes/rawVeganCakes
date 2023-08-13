@@ -20,7 +20,8 @@ const page = async () => {
       ingredients,
       description,
       "slug": slug.current,
-        }`
+        }`,
+    { next: { revalidate: 300 } }
   );
 
   const images = [
