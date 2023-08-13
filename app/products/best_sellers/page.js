@@ -6,6 +6,7 @@ import image1 from "../../../images/carousel/chocholate_cakes/raw_vegan_cake_nor
 import image2 from "../../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-029.jpg";
 import image3 from "../../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-030.jpg";
 import Slider from "../../../components/Slider";
+export const revalidate = 10;
 
 const page = async () => {
   const products = await client.fetch(
