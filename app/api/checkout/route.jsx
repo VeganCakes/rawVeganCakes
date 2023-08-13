@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server'
-import { validateCartItems } from 'use-shopping-cart/utilities'
-import { stripe } from '../../../lib/stripe';
-import { inventory } from '../../../config/inventory';
+import { NextResponse } from "next/server";
+import { validateCartItems } from "use-shopping-cart/utilities";
+import { stripe } from "../../../lib/stripe";
+import { inventory } from "../../../config/inventory";
 
 export async function POST(request) {
   const cartDetails = await request.json();
@@ -21,7 +21,7 @@ export async function POST(request) {
   const session = await stripe.checkout.sessions.create({
     submit_type: "pay",
     mode: "payment",
-    payment_method_types: ["card", "paypal"],
+    payment_method_types: ["card"],
     line_items: lineItemsWithCents,
     billing_address_collection: "auto",
     shipping_options: [
