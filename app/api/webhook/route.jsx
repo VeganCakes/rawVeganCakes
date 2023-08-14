@@ -8,7 +8,7 @@ export default async function GET(req, res) {
     let event;
 
     try {
-      const rawBody = await buffer(req);
+      const rawBody = await buffer(req.body);
       const signature = req.headers["stripe-signature"];
 
       event = stripe.webhooks.constructEvent(
