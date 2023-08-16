@@ -10,7 +10,7 @@ import Search from "../../components/Search";
 
 export default async function AllProducts({ searchParams }) {
   const { search } = searchParams;
-  const searchFilter = search ? `&& name match "${search}"` : "";
+  const searchFilter = search ? `&& name match "${search}*"` : "";
 
   const products = await client.fetch(
     groq`*[_type == "product" ${searchFilter}]{
