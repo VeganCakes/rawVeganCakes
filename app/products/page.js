@@ -6,7 +6,7 @@ import image1 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_
 import image2 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-029.jpg";
 import image3 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-030.jpg";
 import Slider from "../../components/Slider";
-import Search from "@/components/search";
+import Search from "../../components/search";
 
 export default async function AllProducts({ searchParams }) {
   const { search } = searchParams;
