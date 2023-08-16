@@ -16,7 +16,7 @@ import "./Slider.scss";
 
 const Slider = () => {
   const categories = [
-    { id: 1, title: "All Products", image: allproducts, slug: "products" },
+    { id: 1, title: "All Products", image: allproducts, slug: "" },
     { id: 2, title: "New Products", image: image1, slug: "new_products" },
     { id: 3, title: "Best Sellers", image: image2, slug: "best_sellers" },
     {
