@@ -6,10 +6,14 @@ import image1 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_
 import image2 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-029.jpg";
 import image3 from "../../images/carousel/chocholate_cakes/raw_vegan_cake_north_london-030.jpg";
 import Slider from "../../components/Slider";
+import Search from "@/components/search";
 
-export default async function AllProducts() {
+export default async function AllProducts({ searchParams }) {
+  const { search } = searchParams;
+  const searchFilter = search ? `&& name match "${search}"` : "";
+
   const products = await client.fetch(
-    groq`*[_type == "product"]{
+    groq`*[_type == "product" ${searchFilter}]{
       _id,
       "id": _id,
       categories,
@@ -22,6 +26,11 @@ export default async function AllProducts() {
       "slug": slug.current,
         }`
   );
+
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+  //   router.push(`/search?query=${searchQuery}`);
+  // };
 
   const images = [
     { name: "Two Tier Chocolate Cake", image: image1 },
@@ -40,12 +49,13 @@ export default async function AllProducts() {
       <div className="flex justify-center md:justify-start items-center w-full h-[4px] bg-[#469635] "></div>
       <section className="flex flex-col py-5 px-5 md:px-32 w-[100vw]">
         <div className="flex flex-col justify-center items-center w-full  mb-6">
-          <h2 className="text-xl md:mb-3">{title}</h2>
+          <h2 className="text-xl md:mb-3 mr-6">{title}</h2>
           <p className="text-base w-[95vw] md:w-[60vw] text-center whitespace-normal">
             {description}
           </p>
+          <Search />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-10 md:w-[75%] w-[90%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-10 pt-4 md:w-[75%] w-[90%] mx-auto">
           {products.map((product) => (
             <ProductCart product={product} key={product._id} />
           ))}

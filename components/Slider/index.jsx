@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import allproducts from "../../images/carousel/mini_slider/allproducts.png";
 import image1 from "../../images/carousel/mini_slider/raw_vegan _cake-009.jpg";
 import image2 from "../../images/carousel/mini_slider/raw_vegan _cake-010.jpg";
 import image3 from "../../images/carousel/mini_slider/raw_vegan _cake-0011.jpg";
@@ -15,19 +16,20 @@ import "./Slider.scss";
 
 const Slider = () => {
   const categories = [
-    { id: 1, title: "New Products", image: image1, slug: "new_products" },
-    { id: 2, title: "Best Sellers", image: image2, slug: "best_sellers" },
+    { id: 1, title: "All Products", image: allproducts, slug: "products" },
+    { id: 2, title: "New Products", image: image1, slug: "new_products" },
+    { id: 3, title: "Best Sellers", image: image2, slug: "best_sellers" },
     {
-      id: 3,
+      id: 4,
       title: "Chocolate Cakes",
       image: image3,
       slug: "chocholate_cakes",
     },
-    { id: 4, title: "Fruit Cakes", image: image4, slug: "fruit_cakes" },
-    { id: 5, title: "Coffee Cakes", image: image5, slug: "coffee_cakes" },
-    { id: 6, title: "Breakfast Bars", image: image6, slug: "breakfast_bars" },
-    { id: 7, title: "Energy Bites", image: image7, slug: "energy_bites" },
-    { id: 8, title: "Chocolate Bars", image: image8, slug: "chocholate_cakes" },
+    { id: 5, title: "Fruit Cakes", image: image4, slug: "fruit_cakes" },
+    { id: 6, title: "Coffee Cakes", image: image5, slug: "coffee_cakes" },
+    { id: 7, title: "Breakfast Bars", image: image6, slug: "breakfast_bars" },
+    { id: 8, title: "Energy Bites", image: image7, slug: "energy_bites" },
+    { id: 9, title: "Chocolate Bars", image: image8, slug: "chocholate_cakes" },
   ];
 
   const scrollContainerRef = useRef(null);

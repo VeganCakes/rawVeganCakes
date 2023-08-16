@@ -1163,8 +1163,9 @@ export const inventory = [
       "*Peanuts \u0026 raspberries for decoration ",
       "*ALLERGENS",
     ],
-    name: " Chocolate \u0026 Vanilla Cake with Raspberries",
+    name: "Chocolate \u0026 Vanilla Cake with Raspberries",
     newproduct: true,
+    price: 75,
     size: '7.5"',
     slug: {
       _type: "slug",
