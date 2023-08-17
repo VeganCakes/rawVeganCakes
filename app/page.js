@@ -82,17 +82,17 @@ export default async function Home({ children }) {
       </div>
       <Slider />
       <div className="w-full h-full flex flex-col items-center mt-2">
-        <h3 className="font-bold text-2xl text-center my-2 md:mt-12 md:mb-4">
+        <h3 className="font-bold text-2xl text-center my-0 md:mt-12 md:mb-4">
           Our Recommendations
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-10 md:w-[75%] w-[90%]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-4 md:w-[75%] w-[90%]">
           {products.map((product) => (
             <RecProductCart product={product} key={product._id} />
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-[2rem] w-[80%] h-fit text-center mt-[3rem]">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-[2rem] w-[80%] h-fit text-center mt-[1.5rem]">
         <ShowMoreLess title={title1} infoText={infoText1} href={href1} />
         <ShowMoreLess title={title2} infoText={infoText2} href={href2} />
         <ShowMoreLess title={title3} infoText={infoText3} href={href3} />
@@ -163,7 +163,7 @@ export default async function Home({ children }) {
         </div>
         <div className="md:w-1/2">
           {/* Google Map iframe */}
-          <div className="relative w-full h-96 mb-4 md:h-full">
+          <div className="relative w-full h-96 mb-2 md:h-full">
             <Iframe
               url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.206575372047!2d-0.2137229230729649!3d51.656054099832325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876171fd566b3e3%3A0xcf3eed8bd8fbf0e5!2sCakeMeHappyyy%20by%20Mell!5e0!3m2!1sen!2srs!4v1688303762334!5m2!1sen!2srs"
               width="100%"
