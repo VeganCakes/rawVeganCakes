@@ -11,6 +11,7 @@ import { SiteFooter } from "../components/site-footer";
 import InfoPopup from "../components/InfoPopup";
 import Head from "next/head";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 const analitycs = () => {
   window.dataLayer = window.dataLayer || [];
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
               <SiteFooter />
             </div>
           </Providers>
+          <Analytics />
         </body>
       </html>
     </>
