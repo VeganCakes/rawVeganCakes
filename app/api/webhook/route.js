@@ -2,23 +2,6 @@ import Stripe from "stripe";
 import { buffer } from "micro";
 
 export default async function handler(req, res) {
-  // const sendEmail = (recipient, subject, message) => {
-  //   const emailParams = {
-  //     from_name: "ORDERS-RAW VEGAN CAKE",
-  //     to_email: recipient,
-  //     subject: subject,
-  //     message_html: message,
-  //   };
-
-  //   emailjs.send("service_9ey5sol", "template_keyya3g", emailParams)
-  //     .then((response) => {
-  //       console.log("Email sent:", response);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Email error:", error);
-  //     });
-  //   };
-
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   const fulfillOrder = (session) => {
@@ -30,7 +13,7 @@ export default async function handler(req, res) {
     let event;
 
     try {
-      const rawBody = await buffer(req.body);
+      const rawBody = await req.text();
       const signature = req.headers["stripe-signature"];
 
       event = stripe.webhooks.constructEvent(
