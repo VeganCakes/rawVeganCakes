@@ -1,42 +1,42 @@
 import Stripe from "stripe";
 import { buffer } from "micro";
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 
-const sendEmail = (recipient, subject, message) => {
-  const emailParams = {
-    from_name: "ORDERS-RAW VEGAN CAKE",
-    to_email: recipient,
-    subject: subject,
-    message_html: message,
-  };
+// const sendEmail = (recipient, subject, message) => {
+//   const emailParams = {
+//     from_name: "ORDERS-RAW VEGAN CAKE",
+//     to_email: recipient,
+//     subject: subject,
+//     message_html: message,
+//   };
 
-  emailjs.send("service_9ey5sol", "template_keyya3g", emailParams)
-    .then((response) => {
-      console.log("Email sent:", response);
-    })
-    .catch((error) => {
-      console.error("Email error:", error);
-    });
-};
+//   emailjs.send("service_9ey5sol", "template_keyya3g", emailParams)
+//     .then((response) => {
+//       console.log("Email sent:", response);
+//     })
+//     .catch((error) => {
+//       console.error("Email error:", error);
+//     });
+// };
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const app = require('express');
+const app = require('express')();
 
 const bodyParser = require('body-parser');
 
 const fulfillOrder = (session) => {
   // TODO: fill me in
-  const subject = "Order Completed";
-        const message = `
-          Order ID: ${session.id}
-          Customer_name: ${session.customer_details.name}
-          Customer_email: ${session.customer_details.email}
-          Customer_adress: ${session.customer_details.address.line1} ${session.customer_details.address.postal_code} ${session.customer_details.address.city}
-          Total Amount: ${session.amount_total / 100} ${session.currency.toUpperCase()}
-        `;
+  // const subject = "Order Completed";
+  //       const message = `
+  //         Order ID: ${session.id}
+  //         Customer_name: ${session.customer_details.name}
+  //         Customer_email: ${session.customer_details.email}
+  //         Customer_adress: ${session.customer_details.address.line1} ${session.customer_details.address.postal_code} ${session.customer_details.address.city}
+  //         Total Amount: ${session.amount_total / 100} ${session.currency.toUpperCase()}
+  //       `;
 
-        sendEmail("info@rawvegancakes.co.uk", subject, message);
+  //       sendEmail("info@rawvegancakes.co.uk", subject, message);
 
   console.log("Fulfilling order", session);
 }
