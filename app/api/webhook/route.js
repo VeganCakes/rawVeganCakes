@@ -1,13 +1,8 @@
 import Stripe from "stripe";
 import { buffer } from "micro";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // const sendEmail = (recipient, subject, message) => {
   //   const emailParams = {
   //     from_name: "ORDERS-RAW VEGAN CAKE",
