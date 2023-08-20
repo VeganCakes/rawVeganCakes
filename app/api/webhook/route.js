@@ -7,7 +7,7 @@ export const config = {
   },
 };
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
   // const sendEmail = (recipient, subject, message) => {
   //   const emailParams = {
   //     from_name: "ORDERS-RAW VEGAN CAKE",
