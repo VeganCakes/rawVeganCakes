@@ -1,8 +1,11 @@
 import Stripe from "stripe";
 import { buffer } from "micro";
+import { headers } from "next/headers";
 
-export default async function handler(req, res) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+export default async function POST(req) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: "2022-11-15",
+  });
 
   const fulfillOrder = (session) => {
     // TODO: fill me in
@@ -14,10 +17,10 @@ export default async function handler(req, res) {
 
     try {
       const rawBody = await req.text();
-      const signature = req.headers["stripe-signature"];
+      const signature = headers().get("Stripe-Signature");
 
       event = stripe.webhooks.constructEvent(
-        rawBody.toString(),
+        rawBody,
         signature,
         process.env.STRIPE_WEBHOOK_SECRET
       );
@@ -75,7 +78,6 @@ export default async function handler(req, res) {
         const session = event.data.object;
 
         // Send an email to the customer asking them to retry their order
-        emailCustomerAboutFailedPayment(session);
 
         break;
       }
