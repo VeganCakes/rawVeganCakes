@@ -1,7 +1,25 @@
 import Stripe from "stripe";
 import { buffer } from "micro";
+import emailjs from '@emailjs/browser';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+const sendEmail = (recipient, subject, message) => {
+  const emailParams = {
+    from_name: "ORDERS-RAW VEGAN CAKE",
+    to_email: recipient,
+    subject: subject,
+    message_html: message,
+  };
+
+  emailjs.send("service_9ey5sol", "template_keyya3g", emailParams)
+    .then((response) => {
+      console.log("Email sent:", response);
+    })
+    .catch((error) => {
+      console.error("Email error:", error);
+    });
+};
 
 export default async function GET(req, res) {
   if (req.method == "POST") {
@@ -36,6 +54,17 @@ export default async function GET(req, res) {
         if (session.payment_status === "paid") {
           fulfillOrder(session);
         }
+
+        const subject = "Order Completed";
+        const message = `
+          Order ID: ${session.id}
+          Customer_name: ${session.customer_details.name}
+          Customer_email: ${session.customer_details.email}
+          Customer_adress: ${session.customer_details.address.line1} ${session.customer_details.address.postal_code} ${session.customer_details.address.city}
+          Total Amount: ${session.amount_total / 100} ${session.currency.toUpperCase()}
+        `;
+
+        sendEmail("info@rawvegancakes.co.uk", subject, message);
 
         break;
       }
