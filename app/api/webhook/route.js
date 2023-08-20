@@ -1,7 +1,6 @@
 import Stripe from "stripe";
 import { buffer } from "micro";
 
-
 export default async function handler(req, res) {
   // const sendEmail = (recipient, subject, message) => {
   //   const emailParams = {
@@ -31,7 +30,7 @@ export default async function handler(req, res) {
     let event;
 
     try {
-      const rawBody = await buffer(req);
+      const rawBody = await buffer(req.body);
       const signature = req.headers["stripe-signature"];
 
       event = stripe.webhooks.constructEvent(
