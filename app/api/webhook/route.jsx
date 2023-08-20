@@ -21,7 +21,7 @@ const sendEmail = (recipient, subject, message) => {
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const app = require('express')();
+const app = require('express');
 
 const bodyParser = require('body-parser');
 
