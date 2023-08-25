@@ -24,9 +24,6 @@ export async function POST(request) {
     payment_method_types: ["card"],
     line_items: lineItemsWithCents,
     billing_address_collection: "auto",
-    metadata: {
-      cartDetails
-    },
     shipping_options: [
       {
         shipping_rate_data: {
