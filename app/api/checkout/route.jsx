@@ -19,7 +19,7 @@ export async function POST(request) {
   }));
 
   const session = await stripe.checkout.sessions.create({
-    submit_type: "pay",
+     submit_type: "pay",
     mode: "payment",
     payment_method_types: ["card"],
     line_items: lineItemsWithCents,
