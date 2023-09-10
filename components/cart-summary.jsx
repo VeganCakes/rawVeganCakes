@@ -30,8 +30,8 @@ export function CartSummary() {
       const data = await response.json();
       console.log(data);
       console.log(data.url);
-      setLoading(false);
       window.location.href = data.url;
+      setLoading(false);
     } catch (e) {
       setLoading(false);
       console.log(e, "Error is  ====>");
