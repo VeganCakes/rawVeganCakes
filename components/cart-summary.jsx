@@ -19,21 +19,31 @@ export function CartSummary() {
 
   async function handleClick(event) {
     setLoading(true);
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      body: JSON.stringify({ ...cartDetails, deliveryCharge: shippingCharge }),
-    });
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        body: JSON.stringify({
+          ...cartDetails,
+          deliveryCharge: shippingCharge,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      console.log(data.url);
+      setLoading(false);
+      window.location.href = data.url;
+    } catch (e) {
+      setLoading(false);
+      console.log(e, "Error is  ====>");
+    }
     //console.log(response.json())
 
-    const data = await response.json();
-    console.log(data.url);
-    window.location.href = data.url;
     /*
     const result = await redirectToCheckout(data.url)
     if(result?.error) {
       console.log(result)
     }*/
-    setLoading(false);
+
     // event.preventDefault();
     // if (cartCount > 0) {
     //   setStatus("loading");
@@ -65,7 +75,9 @@ export function CartSummary() {
       <dl className="mt-6 space-y-4">
         <div className="flex items-center justify-between">
           <dt className="text-sm">Subtotal</dt>
-          <dd className="text-sm font-medium">{formatCurrencyString({ value: totalPrice , currency: 'GBP' })}</dd>
+          <dd className="text-sm font-medium">
+            {formatCurrencyString({ value: totalPrice, currency: "GBP" })}
+          </dd>
         </div>
 
         <div className="w-full h-full">
@@ -78,7 +90,10 @@ export function CartSummary() {
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
           <dt className="text-base font-medium">Order total</dt>
           <dd className="text-lg font-medium">
-          {formatCurrencyString({ value: Number(totalPrice) + Number(shippingCharge*100) , currency: 'GBP' })}
+            {formatCurrencyString({
+              value: Number(totalPrice) + Number(shippingCharge * 100),
+              currency: "GBP",
+            })}
           </dd>
         </div>
       </dl>
@@ -90,6 +105,7 @@ export function CartSummary() {
         </button> */}
         <CartWarning agree={agree} setAgree={setAgree} />
         <button
+          type="button"
           className="flex justify-center items-center w-full mt-4 rounded-sm bg-[#469635] px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:bg-gray-400"
           onClick={handleClick}
           disabled={isDisabled}
