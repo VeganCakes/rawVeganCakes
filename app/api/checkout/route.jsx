@@ -22,6 +22,9 @@ export async function POST(request) {
     submit_type: "pay",
     mode: "payment",
     payment_method_types: ["card"],
+    phone_number_collection: {
+      enabled: true,
+    },
     line_items: lineItemsWithCents,
     billing_address_collection: "required",
     shipping_options: [

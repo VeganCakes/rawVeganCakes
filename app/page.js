@@ -25,7 +25,8 @@ export const metadata = {
   ],
 };
 
-export default async function Home({ children }) {
+export default async function Home() {
+  // console.log(process.env, "All PRocess");
   let title1 = "No added sugar";
   let infoText1 =
     "All the products contain natural sugars only; no refined sugars are added to any of my recipes, so let’s call then Guilt-Free! We don’t even use maple or agave syrup. Most of the products are simply sweetened with dates & fresh fruit. There’s nothing artificial added.";

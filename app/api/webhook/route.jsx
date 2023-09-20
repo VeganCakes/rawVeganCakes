@@ -1,5 +1,4 @@
 import { stripe } from "../../../lib/stripe";
-import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { renderAsync } from "@react-email/render";
 import ReactEmailTemplate from "./reactEmailTemplate";
@@ -7,7 +6,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const rawBody = await request.text();
-  const signature = headers().get("stripe-signature");
+  const signature = request.headers.get("stripe-signature");
 
   let event;
 
@@ -21,6 +20,7 @@ export async function POST(request) {
     let responseMessage = JSON.stringify({
       messge: "Webhook Error " + err.message,
     });
+    console.error(err.message);
     return new Response(responseMessage, {
       status: 400,
     });

@@ -36,17 +36,31 @@ export function MainNav({ setShowDropDownMenu }) {
               <li className="hidden md:flex" key={link.name}>
                 {link.category ? (
                   <Dropdown>
-                    <Dropdown.Button
-                      className="dropdown-button font-bold"
-                      id="dropdown-button"
-                      style={{ fontWeight: 'bold', color: '#666666' }}
-                    >
-                      <p style={{ fontWeight: 'bold', color: '#666666' }}>{link.name}</p>
-                    </Dropdown.Button>
+                    <Dropdown.Trigger>
+                      <Dropdown.Button
+                        className="dropdown-button font-bold"
+                        id="dropdown-button"
+                        style={{
+                          fontWeight: "bold",
+                          color: "#666666",
+                          background: "transparent",
+                        }}
+                      >
+                        <p style={{ fontWeight: "bold", color: "#666666" }}>
+                          {link.name}
+                        </p>
+                      </Dropdown.Button>
+                    </Dropdown.Trigger>
                     <Dropdown.Menu aria-label="Static Actions">
                       {link.category.map((category) => (
-                        <Dropdown.Item key={category.name} style={{ color: '#AC8067'}}>
-                          <Link href={`/products/${category.slug}`} id="drop-links">
+                        <Dropdown.Item
+                          key={category.name}
+                          style={{ color: "#AC8067" }}
+                        >
+                          <Link
+                            href={`/products/${category.slug}`}
+                            id="drop-links"
+                          >
                             {category.name}
                           </Link>
                         </Dropdown.Item>
