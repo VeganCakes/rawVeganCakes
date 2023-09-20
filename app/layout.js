@@ -1,0 +1,79 @@
+"use client";
+import { useRef } from "react";
+import "./globals.css";
+import { Inter } from "next/font/google";
+import "../styles/style.css";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { SiteHeader } from "../components/site-header";
+import Providers from "../components/providers";
+import { SiteFooter } from "../components/site-footer";
+import InfoPopup from "../components/InfoPopup";
+import Head from "next/head";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+
+export default function RootLayout({ children }) {
+  const tawkMessengerRef = useRef();
+
+  return (
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <body className="layout-body">
+          <Providers>
+            <div className="layout-wrapper">
+              <SiteHeader />
+              <div className="flex-1">{children}</div>
+              <TawkMessengerReact
+                propertyId={process.env.NEXT_PUBLIC_TWAKTO_PROPERTY_ID}
+                widgetId={process.env.NEXT_PUBLIC_TWAKTO_WIDGET_ID}
+                ref={tawkMessengerRef}
+              />
+
+              <InfoPopup />
+              <SiteFooter />
+            </div>
+          </Providers>
+          <Analytics />
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-RRBS5XXF57"
+            strategy="beforeInteractive"
+          />
+          <Script strategy="beforeInteractive">
+            {`
+          window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RRBS5XXF57')`}
+          </Script>
+          <Script type="application/ld+json">
+            {`
+            
+            {
+              "@context": "http://www.schema.org",
+              "@type": "LocalBusiness",
+              "name": "CakeMeHappyyy By Mell",
+              "telephone": "079 00 601365",
+              "url": "https://rawvegancakes.co.uk/",
+              "logo": "https://rawvegancakes.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcakeMeHappyNewLogo.e8d4373d.jpg&w=256&q=75",
+              "image": "https://rawvegancakes.co.uk/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FcakeMeHappyNewLogo.e8d4373d.jpg&w=256&q=75",
+              "description": "Welcome to my Guilt-Free creations; a range of natural, super-fresh & healthy indulgent Raw Vegan Celebration cakes. All my products are made with the finest ingredients & contain no added sugar!",
+              "priceRange": "Competitive",
+              "address": {
+                 "@type": "PostalAddress",
+                 "streetAddress": "37 Byng Road",
+                 "addressLocality": "Barnet",
+                 "addressRegion": "Barnet",
+                 "postalCode": "EN5 4NW",
+                 "addressCountry": "United Kingdom"
+              },
+              "hasMap": "https://goo.gl/maps/K4fNKNePVRNkjTfT7",
+              "openingHours": ["Mo-Su 8:00-21:00"],
+              "contactPoint": {
+                 "@type": "ContactPoint",
+                 "contactType": "Customer Service",
+                 "telephone": "+44 79 00 601365"}
+            }
+             `}
+          </Script>
+        </body>
+      </html>
+    </>
+  );
+}
