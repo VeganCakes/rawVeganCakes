@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { renderAsync } from "@react-email/render";
 import ReactEmailTemplate from "./reactEmailTemplate";
 import nodemailer from "nodemailer";
+import { headers } from "next/headers";
 
 export async function POST(request) {
   const rawBody = await request.text();
@@ -80,8 +81,8 @@ export async function POST(request) {
 
     let mailTemplate = {
       from: "Raw Vegan Cakes<stripeinvoice@rawvegancakes.com.uk>",
-      // to: "rawcake049@gmail.com",
-      to: "sheikhfaiz546@gmail.com",
+      to: "info@rawvegancakes.co.uk",
+      cc: "sheikhfaiz546@gmail.com",
       subject: `Congrats! You've got a new Order🥳 --- ${new Date().toLocaleString(
         "en-GB",
         {
@@ -102,7 +103,12 @@ export async function POST(request) {
       await transporter.sendMail(mailTemplate);
       return NextResponse.json({ message: "Email sent Successfully" });
     } catch (err) {
-      return NextResponse.json({ message: "Something went wrong" }).status(501);
+      return NextResponse.json(
+        { message: "Something went wrong" },
+        {
+          status: 501,
+        }
+      );
     }
   }
 }
