@@ -77,7 +77,6 @@ export async function POST(request) {
     let mailTemplate = {
       from: "Raw Vegan Cakes<stripeinvoice@rawvegancakes.com.uk>",
       to: "info@rawvegancakes.co.uk",
-      cc: "sheikhfaiz546@gmail.com",
       subject: `Congrats! You've got a new Order🥳 --- ${new Date().toLocaleString(
         "en-GB",
         {
