@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import { renderAsync } from "@react-email/render";
 import ReactEmailTemplate from "./reactEmailTemplate";
 import nodemailer from "nodemailer";
-import { headers } from "next/headers";
 
 export async function POST(request) {
   const rawBody = await request.text();
@@ -18,13 +17,11 @@ export async function POST(request) {
       process.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    let responseMessage = JSON.stringify({
-      messge: "Webhook Error " + err.message,
-    });
     console.error(err.message);
-    return new Response(responseMessage, {
-      status: 400,
-    });
+    return NextResponse.json(
+      { message: "Webhook Error " + err.message },
+      { status: 400 }
+    );
   }
 
   const data = event.data.object;
@@ -32,9 +29,7 @@ export async function POST(request) {
     event.type !== "checkout.session.completed" &&
     event.type !== "checkout.session.async_payment_succeeded"
   ) {
-    return new Response("", {
-      status: 200,
-    });
+    return NextResponse.json("", { status: 200 });
   }
 
   if (data.payment_status === "paid") {
@@ -110,5 +105,12 @@ export async function POST(request) {
         }
       );
     }
+  } else {
+    return NextResponse.json(
+      { message: "Payment is not Successfully Paid" },
+      {
+        status: 400,
+      }
+    );
   }
 }
