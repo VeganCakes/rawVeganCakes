@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { urlForImage } from "../../sanity/lib/image";
 import Image from "next/image";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 
 const Product = ({ product }) => {
@@ -16,11 +16,11 @@ const Product = ({ product }) => {
       ...product,
     };
     isInCart ? incrementItem(item.id) : addItem(item, { count: quantity });
-    
+
     toast.custom((t) => (
       <div
         className={`${
-          t.visible ? 'animate-enter' : 'animate-leave'
+          t.visible ? "animate-enter" : "animate-leave"
         } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
       >
         <div className="flex-1 w-0 p-4">
@@ -29,7 +29,8 @@ const Product = ({ product }) => {
               <img
                 className="h-10 w-10 rounded-full"
                 src={
-                  product.image !== undefined && urlForImage(product.image[0]).url()
+                  product.image !== undefined &&
+                  urlForImage(product.image[0]).url()
                 }
                 alt="product.name"
               />
@@ -38,9 +39,7 @@ const Product = ({ product }) => {
               <p className="text-sm font-medium text-gray-900">
                 {product.name} successfuly added to cart!
               </p>
-              <p className="mt-1 text-sm text-gray-500">
-                
-              </p>
+              <p className="mt-1 text-sm text-gray-500"></p>
             </div>
           </div>
         </div>
@@ -53,7 +52,7 @@ const Product = ({ product }) => {
           </Link>
         </div>
       </div>
-    ))
+    ));
   }
 
   const decreaseQuantity = () => {
@@ -90,12 +89,14 @@ const Product = ({ product }) => {
             </p>
             <div className="mt-5 flex items-center justify-between ">
               <div className="text-heading pr-2 text-base font-bold md:pr-0 md:text-xl lg:pr-2 lg:text-2xl 2xl:pr-0 2xl:text-4xl">
-              {formatCurrencyString({ value: product.price , currency: 'GBP' })}
+                {formatCurrencyString({
+                  value: product.price,
+                  currency: "GBP",
+                })}
               </div>
               <div className="text-heading font-bold pr-2 text-sm md:pr-0 md:text-base lg:pr-2 lg:text-xl 2xl:pr-0 2xl:text-2xl">
                 Size: {product.size}
               </div>
-
             </div>
           </div>
           <div className="py-2 md:py-4">
@@ -104,8 +105,11 @@ const Product = ({ product }) => {
                 Ingredients:
               </span>
               <div className="flex flex-wrap justify-start items-center space-x-1 md:space-x-3 ">
-                {product.ingredients.map((ing) => (
-                  <span className="px-1 py-1 mt-2 m-0 w-fit bg-white border border-slate-400 rounded-lg text-sm shadow-xl">
+                {product.ingredients.map((ing, index) => (
+                  <span
+                    key={ing + index}
+                    className="px-1 py-1 mt-2 m-0 w-fit bg-white border border-slate-400 rounded-lg text-sm shadow-xl"
+                  >
                     {ing}
                   </span>
                 ))}

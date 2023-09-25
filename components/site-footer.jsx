@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import logo from "../images/logo_head.png";
 import Image from "next/image";
@@ -79,8 +80,8 @@ export function SiteFooter() {
             </div>
           ))}
         </nav>
-        {news?.map((item) => (
-          <div className="footer-latest_news">
+        {news?.map((item, index) => (
+          <div className="footer-latest_news" key={item.newsdate + index}>
             <h4>LATEST NEWS</h4>
             <p>{item.newsdate}</p>
             <p>

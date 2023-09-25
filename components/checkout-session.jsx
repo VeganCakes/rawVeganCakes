@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
-import { CheckCheck, XCircle } from "lucide-react"
-import Stripe from "stripe"
-import { useShoppingCart } from "use-shopping-cart"
+import { CheckCheck, XCircle } from "lucide-react";
+import { useShoppingCart } from "use-shopping-cart";
 import { useEffect } from "react";
 
 export function CheckoutSession() {
@@ -11,7 +10,7 @@ export function CheckoutSession() {
   useEffect(() => {
     clearCart();
   }, []);
-  
+
   return (
     <>
       <CheckCheck className="mx-auto h-10 w-10 text-lime-500 dark:text-lime-400" />

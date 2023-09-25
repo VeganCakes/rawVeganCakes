@@ -64,7 +64,7 @@ const Slider = () => {
       <div className="flex flex-col justify-center items-center w-[80%]">
         <section className="flex flex-col md:flex-row justify-center md:justify-between space-y-2 items-center w-full p-5">
           <div className="flex flex-col justify-between items-center">
-            <h3 className="font-bold text-xl">Cake Me Happyyy</h3>
+            <h4 className="font-bold text-xl">Cake Me Happyyy</h4>
             <Link href="/products">
               <p className="text-[#6a8d39] text-sm md:text-lg">Go to Shop</p>
             </Link>
@@ -73,17 +73,22 @@ const Slider = () => {
             <p>
               All my cakes are made with Love! Raw vegan cake, no added sugar
             </p>
-            <p>All natural Birthday cakes & Celebration cakes. Full of goodness and guilt free.</p>
+            <p>
+              All natural Birthday cakes & Celebration cakes. Full of goodness
+              and guilt free.
+            </p>
           </div>
 
           <div className="w-10 flex justify-center items-center space-x-2">
             <button
               className="p-3 font-bold border border-gray-400 bg-white text-[6a8d39] focus:bg-[#469635] focus:text-white"
               ref={backwardScrollBtnRef}
+              title="Scroll Left"
             >
               <AiOutlineLeft />
             </button>
             <button
+              title="Scroll Right"
               className="p-3 font-bold border border-gray-400 bg-white text-[6a8d39] focus:bg-[#469635] focus:text-white"
               ref={forwardScrollBtnRef}
             >
@@ -96,9 +101,13 @@ const Slider = () => {
             className="flex items-center space-x-5 overflow-x-scroll scroll-smooth snap-x scrollbar-hide"
             ref={scrollContainerRef}
           >
-            {categories.map((category) => {
+            {categories.map((category, index) => {
               return (
-                <div id={category.id} className="flex-shrink-0 snap-center">
+                <div
+                  key={category.id + index}
+                  id={category.id}
+                  className="flex-shrink-0 snap-center"
+                >
                   <Slide
                     title={category.title}
                     image={category.image}

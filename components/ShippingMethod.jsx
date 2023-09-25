@@ -25,11 +25,11 @@ const theme = createTheme({
         tooltip: {
           fontSize: "2em",
           color: "yellow",
-          backgroundColor: "red"
-        }
-      }
-    }
-  }
+          backgroundColor: "red",
+        },
+      },
+    },
+  },
 });
 const WhiteOnGreenTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} componentsProps={{ tooltip: { className: className } }} />
@@ -39,7 +39,6 @@ const WhiteOnGreenTooltip = styled(({ className, ...props }) => (
     font-size: 1em;
     width: 130%;
 `);
-
 
 function MyFormControlLabel(props) {
   const radioGroup = useRadioGroup();
@@ -79,80 +78,92 @@ export function ShippingMethod({ shippingCharge, setShippingCharge }) {
       {Shipping.map((ship) => {
         if (ship.id === 3) {
           return (
-            <ThemeProvider theme={defaultTheme}>
-            <div key={ship.name}>
-              <div className="flex justify-between">
-              <ThemeProvider theme={theme}>
-                <WhiteOnGreenTooltip id="popup" title={ship.description} placement="left" >
-                  <MyFormControlLabel
-                    value="custom"
-                    label={ship.name}
-                    control={
-                      <Radio sx={{ " &.Mui-checked": { color: "#6a8d39" } }} />
-                    }
-                    sx={{
-                      "& .MuiFormControlLabel-label": {
-                        color: "black",
-                      },
-                      "& .MuiFormControlLabel-label.Mui-checked": {
-                        color: "#6a8d39",
-                      },
-                    }}
-                  />
-                </WhiteOnGreenTooltip>
-                </ThemeProvider>
-                {value === "custom" && (
-                  <section className="flex justify-center items-center space-x-2">
-                    <label className="font-semibold">£</label>
-                    <input
-                      type="number"
-                      name="price"
-                      value={
-                        (shippingCharge >= 1 || shippingCharge === 1500) &&
-                        shippingCharge
-                      }
-                      onChange={(e) =>
-                        setShippingCharge(Number(e.target.value))
-                      }
-                      required
-                      className="border border-gray-400 w-16 h-8 p-1"
-                    />
-                  </section>
-                )}
+            <ThemeProvider theme={defaultTheme} key={ship.name}>
+              <div>
+                <div className="flex justify-between">
+                  <ThemeProvider theme={theme}>
+                    <WhiteOnGreenTooltip
+                      id="popup"
+                      title={ship.description}
+                      placement="left"
+                    >
+                      <MyFormControlLabel
+                        value="custom"
+                        label={ship.name}
+                        control={
+                          <Radio
+                            sx={{ " &.Mui-checked": { color: "#6a8d39" } }}
+                          />
+                        }
+                        sx={{
+                          "& .MuiFormControlLabel-label": {
+                            color: "black",
+                          },
+                          "& .MuiFormControlLabel-label.Mui-checked": {
+                            color: "#6a8d39",
+                          },
+                        }}
+                      />
+                    </WhiteOnGreenTooltip>
+                  </ThemeProvider>
+                  {value === "custom" && (
+                    <section className="flex justify-center items-center space-x-2">
+                      <label className="font-semibold">£</label>
+                      <input
+                        type="number"
+                        name="price"
+                        value={
+                          (shippingCharge >= 1 || shippingCharge === 1500) &&
+                          shippingCharge
+                        }
+                        onChange={(e) =>
+                          setShippingCharge(Number(e.target.value))
+                        }
+                        required
+                        className="border border-gray-400 w-16 h-8 p-1"
+                      />
+                    </section>
+                  )}
+                </div>
+                <div></div>
               </div>
-              <div></div>
-            </div>
             </ThemeProvider>
           );
         } else {
           return (
-              <ThemeProvider theme={defaultTheme}>
-            <div key={ship.name}>
-              <div className="flex justify-between">
-              <ThemeProvider theme={theme}>
-                <WhiteOnGreenTooltip id="popup"  title={ship.description} placement="left">
-                  <MyFormControlLabel
-                    value={ship.price === 0 ? "free" : "local"}
-                    label={ship.name}
-                    control={
-                      <Radio sx={{ " &.Mui-checked": { color: "#6a8d39" } }} />
-                    }
-                    sx={{
-                      "& .MuiFormControlLabel-label": {
-                        color: "black",
-                      },
-                      "& .MuiFormControlLabel-label.Mui-checked": {
-                        color: "#6a8d39",
-                      },
-                    }}
-                  />
-                </WhiteOnGreenTooltip>
-                </ThemeProvider>
-                <p>{ship.price === 0 ? "Free" : `£${ship.price}.00`}</p>
+            <ThemeProvider theme={defaultTheme} key={ship.name}>
+              <div>
+                <div className="flex justify-between">
+                  <ThemeProvider theme={theme}>
+                    <WhiteOnGreenTooltip
+                      id="popup"
+                      title={ship.description}
+                      placement="left"
+                    >
+                      <MyFormControlLabel
+                        value={ship.price === 0 ? "free" : "local"}
+                        label={ship.name}
+                        control={
+                          <Radio
+                            sx={{ " &.Mui-checked": { color: "#6a8d39" } }}
+                          />
+                        }
+                        sx={{
+                          "& .MuiFormControlLabel-label": {
+                            color: "black",
+                          },
+                          "& .MuiFormControlLabel-label.Mui-checked": {
+                            color: "#6a8d39",
+                          },
+                        }}
+                      />
+                    </WhiteOnGreenTooltip>
+                  </ThemeProvider>
+                  <p>{ship.price === 0 ? "Free" : `£${ship.price}.00`}</p>
+                </div>
+                <div></div>
               </div>
-              <div></div>
-            </div>
-      </ThemeProvider>
+            </ThemeProvider>
           );
         }
       })}
