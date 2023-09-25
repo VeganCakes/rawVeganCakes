@@ -1,20 +1,31 @@
-"use client";
-import { useRef } from "react";
 import "./globals.css";
-import { Inter } from "next/font/google";
 import "../styles/style.css";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { SiteHeader } from "../components/site-header";
+import TawkMessengerReactLazyLoad from "../components/TawkMessengerReactLazyLoad";
 import Providers from "../components/providers";
 import { SiteFooter } from "../components/site-footer";
 import InfoPopup from "../components/InfoPopup";
-import Head from "next/head";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+export const metadata = {
+  title: "CakeMeHappyyy | Healthy Vegan Cakes | Raw Vegan Cakes",
+  description:
+    "Welcome to my Guilt-Free creations; a range of natural, super-fresh & healthy indulgent Raw Vegan Celebration cakes. All my products are made with the finest ingredients & contain no added sugar!",
+  keywords: [
+    "raw_vegan_cake",
+    "gluten_free_cake",
+    "raw_vegan_cake_north_london",
+    "gluten_free_cake_north_london ",
+    "raw_vegan_cake_hertfordshire ",
+    "gluten_free_cake_hertfordshire",
+  ],
+  verification: {
+    google: "aFq45ufd_9jw4nKFXzzwqDQrxiMGwp6wvV3c-1_Iwkg",
+  },
+};
 
 export default function RootLayout({ children }) {
-  const tawkMessengerRef = useRef();
-
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -23,17 +34,15 @@ export default function RootLayout({ children }) {
             <div className="layout-wrapper">
               <SiteHeader />
               <div className="flex-1">{children}</div>
-              <TawkMessengerReact
-                propertyId={process.env.NEXT_PUBLIC_TWAKTO_PROPERTY_ID}
-                widgetId={process.env.NEXT_PUBLIC_TWAKTO_WIDGET_ID}
-                ref={tawkMessengerRef}
-              />
+
+              <TawkMessengerReactLazyLoad />
 
               <InfoPopup />
               <SiteFooter />
             </div>
           </Providers>
           <Analytics />
+
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-RRBS5XXF57"
             strategy="beforeInteractive"

@@ -11,20 +11,6 @@ import banner from "../images/homebanner3.png";
 import PopupComponent from "../components/PopupComponent";
 import ShowMoreLess from "../components/ShowMoreLess";
 
-export const metadata = {
-  title: "CakeMeHappyyy | Healthy Vegan Cakes | Raw Vegan Cakes",
-  description:
-    "Welcome to my Guilt-Free creations; a range of natural, super-fresh & healthy indulgent Raw Vegan Celebration cakes. All my products are made with the finest ingredients & contain no added sugar!",
-  keywords: [
-    "raw_vegan_cake",
-    "gluten_free_cake",
-    "raw_vegan_cake_north_london",
-    "gluten_free_cake_north_london ",
-    "raw_vegan_cake_hertfordshire ",
-    "gluten_free_cake_hertfordshire",
-  ],
-};
-
 export default async function Home() {
   // console.log(process.env, "All PRocess");
   let title1 = "No added sugar";
@@ -74,6 +60,8 @@ export default async function Home() {
               objectFit="cover"
               objectPosition="center"
               alt="banner"
+              sizes="(min-width: 780px) 50vw, 100vw"
+              priority
             />
           </div>
         </div>
@@ -168,6 +156,8 @@ export default async function Home() {
           {/* Google Reviews iframe */}
           <div className="relative w-full h-80 mb-4 md:h-full">
             <Iframe
+              title="Our Recent Reviews By Google"
+              loading="lazy"
               url="https://widgets.sociablekit.com/google-reviews/iframe/161414"
               frameborder="0"
               width="100%"
@@ -180,13 +170,14 @@ export default async function Home() {
           {/* Google Map iframe */}
           <div className="relative w-full h-96 mb-2 md:h-full">
             <Iframe
+              title="Our Location on Google Map"
+              loading="lazy"
               url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.206575372047!2d-0.2137229230729649!3d51.656054099832325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876171fd566b3e3%3A0xcf3eed8bd8fbf0e5!2sCakeMeHappyyy%20by%20Mell!5e0!3m2!1sen!2srs!4v1688303762334!5m2!1sen!2srs"
               width="100%"
               height="100%"
               display="block"
               style={{ border: "0" }}
               allowfullscreen=""
-              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               className="absolute top-0 left-0 w-full h-full outline-none overflow-hidden"
             />

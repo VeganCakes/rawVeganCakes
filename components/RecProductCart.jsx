@@ -12,6 +12,8 @@ const ProductCart = ({ product }) => {
   const { addItem, incrementItem, cartDetails } = useShoppingCart();
   const isInCart = !!cartDetails?.[product.id];
 
+  const producImage = urlForImage(product.image[0]).url();
+
   function addToCart() {
     const item = {
       ...product,
@@ -68,14 +70,20 @@ const ProductCart = ({ product }) => {
 
   return (
     <div className="flex flex-col justify-between items-center rounded-md border scale-95 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:scale-[1.05] transform transition-transform duration-300">
-      <Link href={`/products/${product.slug}`} className="w-full">
+      <Link
+        href={`/products/${product.slug}`}
+        className="w-full h-[300px] relative shrink-0"
+      >
         <Image
           src={
-            product.image !== undefined && urlForImage(product.image[0]).url()
+            producImage
+            // product.image !== undefined && urlForImage(product.image[0]).url()
           }
-          width={420}
-          height={372}
-          className="w-full h-[300px] rounded-t-md object-cover"
+          // layout="responsive"
+          fill
+          // width={420}
+          // height={372}
+          className="rounded-t-md object-cover"
           alt={product.name}
         />
       </Link>

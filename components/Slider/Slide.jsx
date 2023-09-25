@@ -6,10 +6,11 @@ const Slide = ({ title, image, slug }) => {
     <div className="flex flex-col justify-between rounded-md w-60 border shadow-xl">
       <Link href={`/products/${slug}`}>
         <Image
+          blurDataURL={image}
           src={image}
-          width={420}
-          height={372}
-          className="h-[200px] w-full rounded-t-md object-fit"
+          width={238}
+          height={211}
+          className="aspect-[238/211] rounded-t-md"
           alt={title}
         />
       </Link>

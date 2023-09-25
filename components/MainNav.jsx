@@ -88,6 +88,7 @@ export function MainNav({ setShowDropDownMenu }) {
               <button
                 onClick={() => setShowDropDownMenu((prev) => !prev)}
                 className="block md:hidden"
+                title={"Open Navmenu"}
               >
                 <GiHamburgerMenu size={30} />
               </button>
