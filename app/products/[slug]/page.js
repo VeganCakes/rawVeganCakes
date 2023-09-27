@@ -4,7 +4,35 @@ import React from "react";
 import Product from "../../../components/Product";
 import Slider from "../../../components/Slider";
 
-const page = async ({ params }) => {
+export async function generateMetadata({ params }) {
+  const product = await client.fetch(
+    groq`*[_type == "product" && slug.current == "${params.slug}"][0]{
+      _id,
+      "id": _id,
+      categories,
+      image,
+      price,
+      name,
+      size,
+      ingredients,
+      description,
+      "slug": slug.current,
+    }`
+  );
+
+  return {
+    title:
+      product.name + " | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+    description: product.description,
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+    },
+  };
+}
+
+const Page = async ({ params }) => {
   const product = await client.fetch(
     groq`*[_type == "product" && slug.current == "${params.slug}"][0]{
       _id,
@@ -31,4 +59,4 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

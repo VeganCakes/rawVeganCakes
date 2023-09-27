@@ -33,11 +33,6 @@ export default async function AllProducts({ searchParams }) {
         }`
   );
 
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   router.push(`/search?query=${searchQuery}`);
-  // };
-
   const images = [
     { name: "Two Tier Chocolate Cake", image: image1 },
     { name: "Pistachio, Macha & Chocolate Tart", image: image2 },

@@ -23,6 +23,7 @@ export const metadata = {
   verification: {
     google: "aFq45ufd_9jw4nKFXzzwqDQrxiMGwp6wvV3c-1_Iwkg",
   },
+  icons: "favicon-svg.svg",
 };
 
 export default function RootLayout({ children }) {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en" suppressHydrationWarning>
         <body className="layout-body">
+          <link rel="icon" href="/favicon-svg.svg" sizes="32x32" />
           <Providers>
             <div className="layout-wrapper">
               <SiteHeader />
