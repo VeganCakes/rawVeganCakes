@@ -43,7 +43,25 @@ export default async function sitemap() {
       priority: 1,
     },
     {
-      url: appUrl + "/delivery_pickup/",
+      url: appUrl + "/about",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: appUrl + "/privacy-policy",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: appUrl + "/faqs",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: appUrl + "/delivery_pickup",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.2,

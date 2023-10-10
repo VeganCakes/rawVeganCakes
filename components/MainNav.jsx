@@ -30,8 +30,8 @@ export function MainNav({ setShowDropDownMenu }) {
 
       <div className="">
         {/*mainNav-ul */}
-        <ul className="flex text-base justify-end items-center m-0 md:mt-[1rem] mt-[.5rem] gap-[1.5rem]">
-          <div className="hidden md:flex text-base justify-end items-center m-0 md:mr-6 gap-[1.5rem]">
+        <ul className="flex text-base justify-end items-center m-0 md:mt-[1rem] mt-[.5rem] gap-[1.2rem]">
+          <div className="hidden md:flex text-base justify-end items-center m-0 md:mr-6 gap-[1.2rem]">
             {links.map((link) => (
               <li className="hidden md:flex" key={link.name}>
                 {link.category ? (

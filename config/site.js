@@ -3,6 +3,7 @@ export const siteConfig = {
   description: "Description",
   header: [
     { name: "Home", href: "/" },
+    { name: "About us", href: "/about" },
     {
       name: "Shop",
       href: "#",
@@ -19,8 +20,8 @@ export const siteConfig = {
       ],
     },
     { name: "Delivery/Pick up", href: "/delivery_pickup" },
-    { name: "About us", href: "/about" },
     { name: "Contact us", href: "/contact" },
+    { name: "FAQ's", href: "/faqs" },
   ],
   footer: [
     { name: "Delivery/Pick up", href: "/delivery_pickup" },
