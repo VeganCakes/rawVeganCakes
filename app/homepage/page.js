@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Iframe from "react-iframe";
 import Carousel from "../../components/LandingPage/Crousel";
-import Logo from "../../images/logo_head.png";
+import Logo from "../../images/cakeMeHappyNewLogo.svg";
 import {
   BiSolidMap,
   BiSolidPhone,
@@ -10,6 +10,8 @@ import {
   BiLogoInstagramAlt,
   BiSolidEnvelope,
 } from "react-icons/bi";
+import {HiArrowLongRight} from "react-icons/hi2"
+
 import Link from "next/link";
 
 const HomePage = () => {
@@ -56,9 +58,10 @@ const HeroSection = () => {
           </p>
           <Link
             href="/products"
-            className="inline-block bg-[#8BBB39] rounded-lg text-white px-8 py-[6px] mt-5 lg:text-2xl lg:mt-8"
+            className="flex w-max items-center gap-x-2 bg-[#8BBB39] rounded-lg text-white px-8 py-[6px] mt-5 lg:text-xl lg:mt-8"
           >
-            Explore →
+            Explore 
+            <span><HiArrowLongRight /></span>
           </Link>
         </div>
         <div className="w-full relative h-96 lg:h-auto lg:absolute lg:right-0 lg:inset-y-0 lg:w-2/5 overflow-hidden max-w-[1611px] min-[2200px]:relative min-[2200px]:w-1/2 ">
@@ -381,9 +384,10 @@ const CelebrateWithUs = () => {
                   </p>
                   <Link
                     href="/products"
-                    className="inline-block w-full text-center bg-[#6B922A] text-sm rounded-lg text-white px-8 py-[6px] mt-auto mb-6 sm:text-base"
+                    className="flex items-center gap-x-2 justify-center w-full text-center bg-[#6B922A] text-sm rounded-lg text-white px-8 py-[6px] mt-auto mb-6 sm:text-base"
                   >
-                    Explore →
+                    Explore 
+            <span><HiArrowLongRight /></span>
                   </Link>
                 </div>
               </div>

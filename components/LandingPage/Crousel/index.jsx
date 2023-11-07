@@ -21,60 +21,74 @@ const Carousel = () => {
       title: "Our Products",
       image: allproducts,
       link: "/products",
+      alternateText:"Raw Vegan Birthday Cakes Collage"
     },
     {
       id: 2,
       title: "New Products",
       image: image1,
       link: "/products/new_products",
+      alternateText:"Raw Vegan Two Tier Choclate Birthday Cake"
     },
     {
       id: 3,
       title: "Best Sellers",
       image: image2,
       link: "/products/best_sellers",
+      alternateText:"Raw Vegan Cherry Bakewell Tart Cake"
     },
     {
       id: 4,
       title: "Chocolate Cakes",
       image: image3,
       link: "/products/chocholate_cakes",
+      alternateText:"Raw Vegan Chocolate Cake"
     },
     {
       id: 5,
       title: "Fruit Cakes",
       image: image4,
       link: "/products/fruit_cakes",
+      alternateText:"Raw Vegan Fruit Cake"
     },
     {
       id: 6,
       title: "Coffee Cakes",
       image: image5,
       link: "/products/coffee_cakes",
+      alternateText:"Raw Vegan Coffee Cake"
+
     },
     {
       id: 7,
       title: "Breakfast Bars",
       image: image6,
       link: "/products/breakfast_bars",
+      alternateText:"Raw Vegan Breakfast Bars"
+
     },
     {
       id: 8,
       title: "Energy Bites",
       image: image7,
       link: "/products/energy_bites",
+      alternateText:"Raw Vegan Energy Bites"
+
     },
     {
       id: 9,
       title: "Chocolate Bars",
       image: image8,
       link: "/products/chocholate_cakes",
+      alternateText:"Raw Vegan Chocolate Bars"
+
     },
     {
       id: 10,
       title: "Dog Treats",
-      image: "/Landing-page/Dog-Treats.jpg",
+      image: "/Landing-Page/Dog-Treats.jpg",
       link: "/",
+      alternateText:"Raw Vegan Dog Treats"
     },
   ];
 
@@ -124,6 +138,7 @@ const Carousel = () => {
                     title={category.title}
                     image={category.image}
                     link={category.link}
+                    alternateText={category.alternateText}
                   />
                 </div>
               );
