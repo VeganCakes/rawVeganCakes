@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [showCategoryMenu, setShowCategoryMenu] = useState(false);
 
   return (
-    <header className="header">
+    <header className="header mx-auto">
       {/* <div className="info-bar hidden md:block md:mb-3 md:mt-1 ">
         <p className="hidden md:block">
           <small>raw vegan cake | gluten free cake | North London | Hertfordshire </small>

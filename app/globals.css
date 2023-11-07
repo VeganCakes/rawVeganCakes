@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Kalam:wght@300;400;700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/grandview');
-
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Kalam:wght@300;400;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/grandview");
 
 @layer base {
   html {
@@ -12,8 +11,8 @@
   }
 }
 
-*{
-  font-family: 'Grandview', sans-serif;
+* {
+  font-family: "Grandview", sans-serif;
 }
 
 /* Works for Chrome, Safari, Edge, Opera */
@@ -29,9 +28,58 @@ input[type="number"] {
 }
 
 button {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-#popup{
+#popup {
   font-size: larger !important;
+}
+
+.infinite-scrolling-hero-section {
+  background: url("/Landing-Page/Hero-Section-Gallery-Collage.webp") repeat-x;
+  background-size: contain;
+  width: 4833px; /* The image width times 3 */
+  animation: slide-x 20s linear infinite;
+}
+.infinite-wave-scrolling {
+  background: url("/Landing-Page/wave-1.webp") repeat-y;
+  background-size: contain;
+  height: 4113px; /* The image width times 3 */
+  animation: slide-y 15s linear infinite;
+}
+
+@media screen and (max-width: 1024px) {
+  .infinite-wave-scrolling {
+    background: url("/Landing-Page/wave-2.png") repeat-x;
+    height: 90px;
+    width: 1419px;
+    animation-name: slide-x-2;
+  }
+  
+}
+
+@keyframes slide-x {
+  0% {
+    background-position: 0px center;
+  }
+  100% {
+    background-position: -2750px center;
+  }
+}
+@keyframes slide-y {
+  0% {
+    background-position: 0px -3000px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+
+@keyframes slide-x-2 {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
 }

@@ -90,7 +90,7 @@ export function MainNav({ setShowDropDownMenu }) {
                 className="block md:hidden"
                 title={"Open Navmenu"}
               >
-                <GiHamburgerMenu size={30} />
+                <GiHamburgerMenu color="rgb(102, 102, 102)" size={30} />
               </button>
             </li>
           </div>

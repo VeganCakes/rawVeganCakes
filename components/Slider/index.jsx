@@ -12,7 +12,7 @@ import image6 from "../../images/carousel/mini_slider/raw_vegan_cake-014.jpg";
 import image7 from "../../images/carousel/mini_slider/raw_vegan_cake-015.jpg";
 import image8 from "../../images/carousel/mini_slider/raw_vegan_cake-016.jpg";
 import Slide from "./Slide";
-import "./Slider.scss";
+// import "./Slider.scss";
 
 const Slider = () => {
   const categories = [
