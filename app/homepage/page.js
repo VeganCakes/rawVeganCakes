@@ -97,11 +97,11 @@ const RawVeganCakes = () => {
       <div className="bg-[#9A684B] px-3 py-9 sm:px-10 md:px-16 xl:px-0">
         <div
           // style={{ maxWidth: "1200px" }}
-          className="max-w-[350px] md:max-w-[1200px] mx-auto flex flex-wrap gap-10 md:gap-5  items-center justify-between"
+          className="max-w-[350px] md:max-w-[1200px] mx-auto flex flex-wrap gap-5 items-center justify-between"
         >
           <div>
             <Image
-              src="/Landing-Page/Gluten-free.svg"
+              src="/Landing-Page/Gluten-Free.svg"
               alt="Gluten Free Icon"
               className="aspect-square max-md:w-20"
               width="103"
@@ -312,11 +312,11 @@ const CelebrateWithUs = () => {
           <span className="mt-5 block">Celebrate with us</span>
         </h3>
         <div className="mt-12">
-          <div className="md:flex">
-            <div className="flex mt-6 md:mt-0 md:pr-2">
+          <div className="lg:flex">
+            <div className="flex mt-6 lg:mt-0 lg:pr-2">
               <Link
                 href="/products/chocolate-and-cherry-bakewell-double-decker-cake"
-                className="pr-[6px] pb-[6px] relative md:pb-0 md:pr-2"
+                className="pr-[6px] pb-[6px] relative lg:pb-0 lg:pr-2"
               >
                 <Image
                   src="/Landing-Page/Celebration-1.webp"
@@ -325,13 +325,13 @@ const CelebrateWithUs = () => {
                   width="286"
                   height="299"
                 />
-                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-0 right-[6px] bottom-[6px] md:bottom-0 rounded-b-lg  mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] md:right-[8px] sm:py-3 sm:rounded-b-2xl">
+                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-0 right-[6px] bottom-[6px] lg:bottom-0 rounded-b-lg  mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] lg:right-[8px] sm:py-3 sm:rounded-b-2xl">
                   BIRTHDAY
                 </h4>
               </Link>
               <Link
                 href="/products/organic-chocolate-bar-peanut-butter"
-                className="pl-[6px] pb-[6px] relative md:pb-0 md:pl-2"
+                className="pl-[6px] pb-[6px] relative lg:pb-0 lg:pl-2"
               >
                 <Image
                   src="/Landing-Page/Celebration-2.webp"
@@ -340,16 +340,16 @@ const CelebrateWithUs = () => {
                   width="286"
                   height="299"
                 />
-                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-[6px] right-0 bottom-[6px] md:bottom-0 rounded-b-lg mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] md:left-[8px] sm:py-3 sm:rounded-b-2xl">
+                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-[6px] right-0 bottom-[6px] lg:bottom-0 rounded-b-lg mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] lg:left-[8px] sm:py-3 sm:rounded-b-2xl">
                   THANK YOU
                 </h4>
               </Link>
             </div>
 
-            <div className="flex md:pl-2 justify-end">
+            <div className="flex lg:pl-2 justify-end">
               <Link
                 href="/products/organic-chocolate-bar-hazelnut"
-                className="pr-[6px] pt-[6px] relative md:pt-0 md:pr-2 flex-1"
+                className="pr-[6px] pt-[6px] relative lg:pt-0 lg:pr-2"
               >
                 <Image
                   src="/Landing-Page/Celebration-3.webp"
@@ -358,32 +358,34 @@ const CelebrateWithUs = () => {
                   width="286"
                   height="299"
                 />
-                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-0 right-[6px] bottom-0 rounded-b-lg  mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] md:right-[8px] sm:py-3 sm:rounded-b-2xl">
+                <h4 className="uppercase font-bold py-1 text-center text-white absolute left-0 right-[6px] bottom-0 rounded-b-lg  mb-0 bg-gradient-to-r from-[#A2CC5A] to-[#6B922A] lg:right-[8px] sm:py-3 sm:rounded-b-2xl">
                   NEW JOB
                 </h4>
               </Link>
 
-              <div className="pl-[6px] pt-[6px]  md:pt-0 md:pl-2 flex-1">
-              <div
-                className="bg-[#E7FFBF] border-2 border-[#6B922A] px-3 flex flex-col justify-center aspect-[111/116] rounded-lg sm:rounded-2xl sm:px-8"
-              >
-                <p className="font-bold text-center text-[#6B922A] text-base mt-auto sm:text-lg" >Checkout Our</p>
-                <p className="font-black text-center text-[#6B922A] text-xl mt-1 sm:text-2xl" >More Products</p>
-                <Link
-                  href="/products"
-                  className="inline-block w-full text-center bg-[#6B922A] text-sm rounded-lg text-white px-8 py-[6px] mt-auto mb-6"
-                >
-                  Explore →
-                </Link>
-                {/* <Image
+              <div className="pl-[6px] pt-[6px] relative lg:pt-0 lg:pl-2">
+                <Image
                   src="/Landing-Page/Celebration-3.webp"
                   alt="Birthday Cake"
-                  className="aspect-[111/116] rounded-lg sm:rounded-2xl"
+                  className="invisible aspect-[111/116] rounded-lg sm:rounded-2xl"
                   width="286"
                   height="299"
-                /> */}
-              </div>
-                
+                  quality={2}
+                />
+                <div className="bg-[#E7FFBF] border-2 border-[#6B922A] px-3 flex flex-col justify-center absolute inset-0 top-[6px] left-[6px] rounded-lg sm:rounded-2xl sm:px-8 lg:top-0 lg:left-[8px] ">
+                  <p className="font-bold text-center text-[#6B922A] text-base mt-auto sm:text-lg">
+                    Checkout Our
+                  </p>
+                  <p className="font-black text-center text-[#6B922A] text-xl mt-1 sm:text-2xl">
+                    More Products
+                  </p>
+                  <Link
+                    href="/products"
+                    className="inline-block w-full text-center bg-[#6B922A] text-sm rounded-lg text-white px-8 py-[6px] mt-auto mb-6 sm:text-base"
+                  >
+                    Explore →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

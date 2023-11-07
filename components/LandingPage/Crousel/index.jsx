@@ -73,7 +73,7 @@ const Carousel = () => {
     {
       id: 10,
       title: "Dog Treats",
-      image: image8,
+      image: "/Landing-page/Dog-Treats.jpg",
       link: "/",
     },
   ];

@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/chocholate_bars/gluten_free_cake_no
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Chocolate Bars | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Chocolate Bars | Vegan Desserts | Plant Based Vegan Chocolate Bars",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "These are really popular with both children and adults! Vegan chocolate bars are a delectable and compassionate choice for chocolate lovers who opt for a raw vegan plant-based lifestyle. They are made with 100% organic cacao, a lovely treat for any occasion!",
 };
 
 const page = async () => {
@@ -38,7 +38,7 @@ const page = async () => {
     "raw vegan cake | gluten free cake | North London | Hertfordshire";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "These are really popular with both children and adults! These guilt-free no-refined-sugar raw vegan gluten-free Chocolate bars are made with 100% Organic cacao.";
+    "These are really popular with both children and adults! Vegan chocolate bars are a delectable and compassionate choice for chocolate lovers who opt for a raw vegan plant-based lifestyle. They are made with 100% organic cacao, a lovely treat for any occasion!";
   const title = "Chocolate Bars";
 
   return (

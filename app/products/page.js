@@ -9,9 +9,9 @@ import Slider from "../../components/Slider";
 import Search from "../../components/Search";
 
 export const metadata = {
-  title: "Products | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "All Products | Plant Based Vegan Celebration Cakes ",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "At Raw Vegan Cakes, we are constantly developing the range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free birthday, celebration cakes and more. All the products are made with high quality natural ingredients to ensure they taste 100% yummy.",
 };
 
 export default async function AllProducts({ searchParams }) {
@@ -42,7 +42,7 @@ export default async function AllProducts({ searchParams }) {
     "raw vegan cake | gluten free cake | North London | Hertfordshire";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. \n All the products are made with high quality natural ingredients to ensure they taste 100% yummy!";
+    "At Raw Vegan Cakes, we are constantly developing the range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free birthday, celebration cakes and more. All the products are made with high quality natural ingredients to ensure they taste 100% yummy.";
   const title = "All Products";
 
   return (

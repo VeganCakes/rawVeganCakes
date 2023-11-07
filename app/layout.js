@@ -1,5 +1,6 @@
 import "./globals.css";
 import "../styles/style.css";
+import { headers } from "next/headers";
 // import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { SiteHeader } from "../components/site-header";
 import TawkMessengerReactLazyLoad from "../components/TawkMessengerReactLazyLoad";
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
               <TawkMessengerReactLazyLoad />
 
               <InfoPopup />
-              {/* <SiteFooter /> */}
+              <SiteFooter />
             </div>
           </Providers>
           <Analytics />

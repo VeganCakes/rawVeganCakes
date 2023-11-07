@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/coffee_cakes/raw_vegan_cake_north_l
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Coffee Cakes | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Coffee Cakes | Vegan Desserts | Dairy Free Cakes",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "Vegan coffee cakes are a delightful and cruelty-free twist on the classic coffee cake. Take a look at our range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free coffee cakes. Perfect for your birthday cake. All the products are made with high quality natural ingredients.",
 };
 
 const page = async () => {
@@ -38,7 +38,7 @@ const page = async () => {
     "raw vegan cake | gluten free cake | North London | Hertfordshiren";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "Take a look at our range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free Coffee cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!";
+    "Vegan coffee cakes are a delightful and cruelty-free twist on the classic coffee cake. Take a look at our range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free coffee cakes. Perfect for your birthday cake. All the products are made with high quality natural ingredients.";
   const title = "Coffee Cakes";
 
   return (

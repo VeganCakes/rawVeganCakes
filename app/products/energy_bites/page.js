@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/energy_bites/gluten_free_cake_north
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Energy Bites | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Energy Bites | Vegan Desserts | Vegan Energy Bites",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "Our Energy Bites are perfect for snacking or a healthy afternoon pick-me-up. These guilt-free no-refined-sugar, raw vegan, gluten-free bites come in various delicious flavours including our 'Feast' variety with a homemade 100% organic cacao chocolate swirl for an extra burst of flavour!",
 };
 
 const page = async () => {
@@ -37,7 +37,7 @@ const page = async () => {
     "raw vegan cake | gluten free cake | North London | Hertfordshire";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "Our Energy Bites are absolutely great for snacking and as a healthy afternoon pick-me-up. \n These tasty guilt-free no-refined-sugar raw vegan gluten-free bites come in a range of delicious flavours including our ‘Feast’ product which is a true celebration of all the flavours along with a bonus homemade \n100% Organic cacao chocolate swirl!";
+    "Our Energy Bites are perfect for snacking or a healthy afternoon pick-me-up. These guilt-free no-refined-sugar, raw vegan, gluten-free bites come in various delicious flavours including our 'Feast' variety with a homemade 100% organic cacao chocolate swirl for an extra burst of flavour!";
   const title = "Energy Bites";
 
   return (

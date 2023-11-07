@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/breakfast_bars/raw_vegan_cake_north
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "BreakFast Bars | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Breakfast Bars | Dairy Free Breakfast Bars | Vegan Desserts ",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "We call them ‘Breakfast Bars’, but take it from me, they fill the gap at absolutely any time of the day! Delicious with an afternoon cuppa, these guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free bars are made with the highest quality natural ingredients.",
 };
 
 const page = async () => {

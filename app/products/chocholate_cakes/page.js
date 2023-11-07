@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/chocholate_cakes/raw_vegan_cake_nor
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Chocolate Cakes | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Chocolate Cake | Dairy Free Egg Free Cakes",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "Made with 100% Organic cacao, our chocolate Birthday cake is a lovely treat for every special occasion, and they are customised to your needs. Why not take a look at our range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan, gluten-free cakes at Raw Vegan Cakes.",
 };
 
 const page = async () => {
@@ -37,7 +37,7 @@ const page = async () => {
   const subTitle1 = "raw vegan cake | gluten free cake | north london";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "Made with 100% Organic cacao, take a look at our range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free Chocolate cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!";
+    "Made with 100% Organic cacao, our chocolate Birthday cake is a lovely treat for every special occasion, and they are customised to your needs. Why not take a look at our range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan, gluten-free cakes at Raw Vegan Cakes.";
   const title = "Chocolate Cakes";
 
   return (

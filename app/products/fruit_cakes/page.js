@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/fruit_cakes/raw_vegan_cake_north_lo
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Fruit Cakes | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "Fruit Cakes | Vegan Cakes | Plant Based Vegan Cakes",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "Made up of a unique blend of sweet and tangy fruits, these colourful guilt-free raw vegan gluten-free delights contain no refined sugar at all. This offers a delicious and compassionate option for those who follow a plant-based diet & it can be a great treat for special occasions!",
 };
 
 const page = async () => {
@@ -38,7 +38,7 @@ const page = async () => {
     "raw vegan cake | gluten free cake | North London | Hertfordshire";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "Made with fresh fruit, these colourful guilt-free raw vegan gluten-free delights contain no refined sugar at all.";
+    "Made up of a unique blend of sweet and tangy fruits, these colourful guilt-free raw vegan gluten-free delights contain no refined sugar at all. This offers a delicious and compassionate option for those who follow a plant-based diet & it can be a great treat for special occasions!";
   const title = "Fruit Cakes";
 
   return (

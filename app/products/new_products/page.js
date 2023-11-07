@@ -8,9 +8,9 @@ import image3 from "../../../images/carousel/chocholate_cakes/raw_vegan_cake_nor
 import Slider from "../../../components/Slider";
 
 export const metadata = {
-  title: "Newest Product | Plant Based Vegan Cakes | Gluten Free Vegan Cakes",
+  title: "New Products | Gluten Free Vegan Cakes | Dairy Free Cakes",
   description:
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free birthday cakes & celebration cakes. All the products are made with high quality natural ingredients to ensure they taste 100% yummy!",
+    "Raw Vegan Cakes are constantly developing a range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free products for your heart desires. If you are looking for the best vegan cakes, tarts, chocolate bars. Raw Vegan Cakes have that in store for you.",
 };
 
 const page = async () => {
@@ -38,7 +38,7 @@ const page = async () => {
     "raw vegan cake | gluten free cake | North London | Hertfordshire";
   const subTitle2 = "raw vegan cake | gluten free cake SHOP";
   const description =
-    "We are constantly developing the range of guilt-free no-refined-sugar delicious & super-tasty raw vegan gluten-free products. \n All the products are made with high quality natural ingredients to ensure they taste 100% yummy!";
+    "Raw Vegan Cakes are constantly developing a range of guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free products for your heart desires. If you are looking for the best vegan cakes, tarts, chocolate bars. Raw Vegan Cakes have that in store for you.";
   const title = "New Products";
 
   return (
