@@ -50,13 +50,13 @@ export default function RootLayout({ children }) {
             src="https://www.googletagmanager.com/gtag/js?id=G-RRBS5XXF57"
             strategy="beforeInteractive"
           />
-          {/* <Script
+          <Script
             strategy="beforeInteractive"
             src="https://cookieconsent.popupsmart.com/src/js/popper.js"
           />
           <Script strategy="afterInteractive">{`
           window.start.init({Palette:"palette6",Mode:"banner bottom",Theme:"classic",Location:"https://rawvegancakes.co.uk/privacy-policy",Time:"5",})
-          `}</Script> */}
+          `}</Script>
           <Script strategy="beforeInteractive">
             {`
           window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RRBS5XXF57')`}

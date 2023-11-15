@@ -37,7 +37,7 @@ export function SiteFooter() {
 
   return (
     <>
-      {pathName !== "/homepage" && (
+      {pathName !== "/" && (
         <footer>
           {/* footer-wrapper */}
           <div className="grid text-center items-center h-full grid-cols-1 md:grid-cols-4 gap-[2rem] w-[80%]">

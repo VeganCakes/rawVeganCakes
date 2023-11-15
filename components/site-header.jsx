@@ -14,7 +14,7 @@ export function SiteHeader() {
 
   return (
     <>
-      {pathName !== "/homepage" ? (
+      {pathName !== "/" ? (
         <header className="header mx-auto">
           <div className="menu-bar md:mt-6 md:mb-2 mt-4 mb-1">
             <MainNav
