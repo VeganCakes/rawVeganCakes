@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Iframe from "react-iframe";
 import Carousel from "../../components/LandingPage/Crousel";
+import Modal from "../../components/LandingPage/Modal/Modal";
 import Logo from "../../images/cakeMeHappyNewLogo.svg";
 import {
   BiSolidMap,
@@ -9,8 +11,9 @@ import {
   BiLogoFacebookCircle,
   BiLogoInstagramAlt,
   BiSolidEnvelope,
+  BiX,
 } from "react-icons/bi";
-import {HiArrowLongRight} from "react-icons/hi2"
+import { HiArrowLongRight } from "react-icons/hi2";
 
 import Link from "next/link";
 
@@ -60,8 +63,10 @@ const HeroSection = () => {
             href="/products"
             className="flex w-max items-center gap-x-2 bg-[#8BBB39] rounded-lg text-white px-8 py-[6px] mt-5 lg:text-xl lg:mt-8"
           >
-            Explore 
-            <span><HiArrowLongRight /></span>
+            Explore
+            <span>
+              <HiArrowLongRight />
+            </span>
           </Link>
         </div>
         <div className="w-full relative h-96 lg:h-auto lg:absolute lg:right-0 lg:inset-y-0 lg:w-2/5 overflow-hidden max-w-[1611px] min-[2200px]:relative min-[2200px]:w-1/2 ">
@@ -91,76 +96,189 @@ const HeroSection = () => {
 };
 
 const RawVeganCakes = () => {
+  const [displayModal, setModalDisplay] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+
+  const handleModalDisplay = () => {
+    setModalDisplay((state) => !state);
+  };
+
+  let Details = {
+    "Gluten Free": {
+      imageSrc: "/Landing-Page/Gluten-Free.svg",
+      title: "Gluten Free",
+      desc: "All my products are Gluten-free, I even use gluten-free oats where oats are listed in the ingredients. Don't forget there's no flour used in any of the products, the closest alternative 'flour' I use is simply made from ground almonds. So if you have a Gluten intolerance, you're good to go!",
+      navigationLink:
+        "https://www.health.harvard.edu/staying-healthy/ditch-the-gluten-improve-your-health",
+    },
+    "No Refined Sugar": {
+      imageSrc: "/Landing-Page/Sugar-Free.svg",
+      title: "No Refined Sugar",
+      desc: "All the products contain natural sugars only, no refined sugars are added to any of my recipes, so let's call then Guilt-Free! We don't even use maple or agave syrup. Most of the products are simply sweetened with dates & fresh fruit. There's nothing artificial added.",
+      navigationLink: "https://www.healthline.com/nutrition/too-much-sugar",
+    },
+    "Dairy Free": {
+      imageSrc: "/Landing-Page/Milk-Free.svg",
+      title: "Dairy Free",
+      desc: "None of my products contain Dairy; no milk, no butter, no eggs. We achieve delicious creamy dairy-free products using the creaminess which is derived from cashew nuts and coconut cream. Where a 'milk' is required, only plant-based alternatives are used such as organic almond and coconut milk.",
+      navigationLink:
+        "https://thebeet.com/is-milk-bad-for-you-7-reasons-why-dairy-is-unhealthy/",
+    },
+    "Soy Free": {
+      imageSrc: "/Landing-Page/Soya-Free.svg",
+      title: "Soy Free",
+      desc: "If you have a soy allergy or prefer to cut soy from your diet, these products are 100% Soy-free! As only very few wholesome and natural products are used, we can assure very high standard of product integrity.",
+      navigationLink:
+        "https://www.cleaneatingkitchen.com/dangers-of-eating-soy/",
+    },
+  };
+
+  useEffect(() => {
+    if (modalContent !== "") {
+      setModalDisplay(true);
+    }
+  }, [modalContent]);
+
   return (
     <section className="Raw-vegan-cakes pt-12 lg:pt-24">
       <h3 className="font-bold text-lg text-center text-[#9A684B] px-3">
         All of my cakes are made with Love!
-        <span className="text-[#8BBB39]"> Raw Vegan Cakes</span>
+        <span className="text-[#8BBB39] w-40 inline-block ">
+          {" "}
+          Raw Vegan Cakes
+        </span>
       </h3>
       <div className="bg-[#9A684B] px-3 py-9 sm:px-10 md:px-16 xl:px-0">
         <div
           // style={{ maxWidth: "1200px" }}
-          className="max-w-[350px] md:max-w-[1200px] mx-auto flex flex-wrap gap-5 items-center justify-between"
+          className="relative md:static max-w-[375px] md:max-w-[1200px] mx-auto flex flex-wrap gap-y-7 gap-x-5 items-start md:items-center justify-between"
         >
-          <div>
+          <button onClick={() => setModalContent("Gluten Free")}>
             <Image
               src="/Landing-Page/Gluten-Free.svg"
               alt="Gluten Free Icon"
-              className="aspect-square max-md:w-20"
+              className="aspect-square mx-auto max-[796px]:w-20"
               width="103"
               height="103"
             />
             <p className="text-center mt-3 text-white text-lg font-bold">
               Gluten Free
             </p>
-          </div>
-          <div>
+          </button>
+
+          <button
+            onClick={() => setModalContent("No Refined Sugar")}
+            className="order-3 md:order-none"
+          >
             <Image
               src="/Landing-Page/Sugar-Free.svg"
               alt="Sugar Free Icon"
-              className="aspect-square max-md:w-20"
+              className="aspect-square ml-auto max-[796px]:w-20 md:mx-auto"
               width="103"
               height="103"
             />
-            <p className="text-center mt-3 text-white text-lg font-bold">
-              Sugar Free
+            <p className="text-center w-2/3 ml-auto md:w-auto md:ml-0  mt-3 text-white text-lg font-bold">
+              No Refined Sugar
             </p>
-          </div>
-          <div className="w-full md:w-auto">
+          </button>
+
+          <div className="invisible opacity-0 select-none pointer-events-none md:visible md:opacity-100 ">
             <Image
-              className="mx-auto aspect-square max-md:w-28"
+              className="mx-auto aspect-square max-[796px]:w-28 max-[370px]:w-20 "
               src="/Landing-Page/Raw-Vegan.svg"
               alt="Raw Vegan Icon"
               width="145"
               height="145"
             />
           </div>
-          <div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  md:hidden">
+            <Image
+              className="mx-auto aspect-square max-[796px]:w-28 max-[370px]:w-20"
+              src="/Landing-Page/Raw-Vegan.svg"
+              alt="Raw Vegan Icon"
+              width="145"
+              height="145"
+            />
+          </div>
+
+          <button onClick={() => setModalContent("Dairy Free")}>
             <Image
               src="/Landing-Page/Milk-Free.svg"
               alt="Milk Free Icon"
-              className="aspect-square max-md:w-20"
+              className="aspect-square mx-auto max-[796px]:w-20"
               width="103"
               height="103"
             />
             <p className="text-center mt-3 text-white text-lg font-bold">
               Dairy Free
             </p>
-          </div>
-          <div>
+          </button>
+
+          <button onClick={() => setModalContent("Soy Free")}>
             <Image
               src="/Landing-Page/Soya-Free.svg"
-              alt="Soya Free Icon"
-              className="aspect-square max-md:w-20"
+              alt="Soy Free Icon"
+              className="aspect-square mx-auto max-[796px]:w-20"
               width="103"
               height="103"
             />
             <p className="text-center mt-3 text-white text-lg font-bold">
               Soy Free
             </p>
-          </div>
+          </button>
         </div>
       </div>
+      <Modal.Container
+        displayModal={displayModal}
+        hideOnBlur={handleModalDisplay}
+      >
+        <Modal.Header>
+          <button
+            title="Close"
+            onClick={handleModalDisplay}
+            className={`absolute right-4 top-5 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#8BBB39]`}
+          >
+            <BiX size="28" className="fill-[#8BBB39]" />
+          </button>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="">
+            <div className="flex flex-col items-center gap-3 pt-4">
+              <div className="relative">
+                <span
+                  style={{ animationDuration: "10s" }}
+                  className="animate-spin absolute -inset-1 rounded-full border-[3px] border-dashed border-[#9A684B]"
+                ></span>
+                <Image
+                  src={Details[modalContent]?.imageSrc}
+                  alt={Details[modalContent]?.title + " Icon"}
+                  className="aspect-square"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 className="text-center my-0 text-2xl font-bold text-[#9A684B]">
+                {Details[modalContent]?.title}
+              </h3>
+              <p
+                style={{ textAlignLast: "center" }}
+                className="text-justify mt-2 leading-relaxed max-w-[325px]"
+              >
+                {Details[modalContent]?.desc}
+              </p>
+              <div>
+                <Link
+                  target="_blank"
+                  href={Details[modalContent]?.navigationLink}
+                  className="flex w-max items-center gap-x-2 bg-[#8BBB39] rounded-md text-white px-6 py-1 my-4 "
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal.Container>
     </section>
   );
 };
@@ -386,8 +504,10 @@ const CelebrateWithUs = () => {
                     href="/products"
                     className="flex items-center gap-x-2 justify-center w-full text-center bg-[#6B922A] text-sm rounded-lg text-white px-8 py-[6px] mt-auto mb-6 sm:text-base"
                   >
-                    Explore 
-            <span><HiArrowLongRight /></span>
+                    Explore
+                    <span>
+                      <HiArrowLongRight />
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -592,7 +712,7 @@ const Footer = () => {
               <h4 className="font-bold text-2xl text-[#8BBB39] lg:text-2xl">
                 Thank you
               </h4>
-              <p className="">
+              <p className="text-[#666666]">
                 Thank you to explore our Raw Vegan and Gluten-free Birthday cake
                 and Celebration cake website! We hope you&apos;ll find your
                 delicious guilt-free, indulgent treats here.
