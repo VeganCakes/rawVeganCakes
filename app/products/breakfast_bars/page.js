@@ -10,7 +10,7 @@ import Slider from "../../../components/Slider";
 export const metadata = {
   title: "Breakfast Bars | Dairy Free Breakfast Bars | Vegan Desserts ",
   description:
-    "We call them ‘Breakfast Bars’, but take it from me, they fill the gap at absolutely any time of the day! Delicious with an afternoon cuppa, these guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free bars are made with the highest quality natural ingredients.",
+    "We call them 'Breakfast Bars', but take it from me, they fill the gap at absolutely any time of the day! Delicious with an afternoon cuppa, these guilt-free no-refined-sugar, delicious & super-tasty raw vegan gluten-free bars are made with the highest quality natural ingredients.",
 };
 
 const page = async () => {
@@ -26,7 +26,8 @@ const page = async () => {
       ingredients,
       description,
       "slug": slug.current,
-        }`
+        }`,
+        undefined, { cache: 'no-store' }
   );
 
   const images = [

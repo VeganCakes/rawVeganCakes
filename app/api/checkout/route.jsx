@@ -1,22 +1,30 @@
 import { NextResponse } from "next/server";
 import { validateCartItems } from "use-shopping-cart/utilities";
 import { stripe } from "../../../lib/stripe";
-import { inventory } from "../../../config/inventory";
+// import { inventory } from "../../../config/inventory";
+import { client } from "../../../sanity/lib/client";
+import { groq } from "next-sanity";
 
 export async function POST(request) {
   const cartDetails = await request.json();
   const deliveryCharge = cartDetails["deliveryCharge"];
+  const TotalProductsIds = cartDetails["totalProductsId"];
   delete cartDetails.deliveryCharge;
-  const lineItems = validateCartItems(inventory, cartDetails);
+  delete cartDetails.totalProductsId;
+
+  const fetchedProducts = await client.fetch(
+    groq`*[_type == "product" && _id in [${TotalProductsIds.map(
+      (id) => `"${id}"`
+    ).join(",")}]]{
+      ...,
+      "id": _id,
+    }`
+  );
+  const lineItems = validateCartItems(fetchedProducts, cartDetails);
+
   const origin = request.headers.get("origin");
 
-  const lineItemsWithCents = lineItems.map((item) => ({
-    ...item,
-    price_data: {
-      ...item.price_data,
-      unit_amount: item.price_data.unit_amount * 100,
-    },
-  }));
+  const lineItemsWithCents = lineItems;
 
   const session = await stripe.checkout.sessions.create({
     submit_type: "pay",

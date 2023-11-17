@@ -76,6 +76,7 @@ export const inventory = [
       current: "organic-chocolate-bar-apricot-and-pistachio",
     },
   },
+  
   {
     _createdAt: "2023-06-13T08:48:03Z",
     id: "f0be1227-d57c-499f-8c1a-45eb84adfbb9",

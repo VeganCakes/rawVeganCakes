@@ -8,6 +8,7 @@ export default async function robots() {
         "/contact/",
         "/privacy-policy/",
         "/faqs/",
+        "/blogs",
         "/products/",
       ],
       disallow: ["/success/", "/cart/"],

@@ -28,7 +28,7 @@ const page = async () => {
       description,
       "slug": slug.current,
         }`,
-    { next: { revalidate: 300 } }
+        undefined, { cache: 'no-store' }
   );
 
   const images = [

@@ -30,8 +30,8 @@ export default async function AllProducts({ searchParams }) {
       ingredients,
       description,
       "slug": slug.current,
-        }`
-  );
+        }`,
+        undefined, { cache: 'no-store' });
 
   const images = [
     { name: "Two Tier Chocolate Cake", image: image1 },

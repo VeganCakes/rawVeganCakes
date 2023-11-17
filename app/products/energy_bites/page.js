@@ -26,7 +26,8 @@ const page = async () => {
       ingredients,
       description,
       "slug": slug.current,
-        }`
+        }`,
+        undefined, { cache: 'no-store' }
   );
   const images = [
     { name: "Two Tier Chocolate Cake", image: image1 },

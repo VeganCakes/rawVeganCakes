@@ -105,7 +105,7 @@ const Product = ({ product }) => {
                 Ingredients:
               </span>
               <div className="flex flex-wrap justify-start items-center space-x-1 md:space-x-3 ">
-                {product.ingredients.map((ing, index) => (
+                {product?.ingredients?.map((ing, index) => (
                   <span
                     key={ing + index}
                     className="px-1 py-1 mt-2 m-0 w-fit bg-white border border-slate-400 rounded-lg text-sm shadow-xl"

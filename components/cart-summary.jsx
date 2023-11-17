@@ -25,6 +25,7 @@ export function CartSummary() {
         body: JSON.stringify({
           ...cartDetails,
           deliveryCharge: shippingCharge,
+          totalProductsId:Object.keys(cartDetails)
         }),
       });
       const data = await response.json();
