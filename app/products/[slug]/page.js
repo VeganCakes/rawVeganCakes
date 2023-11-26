@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
       ingredients,
       description,
       "slug": slug.current,
-    }`
-  );
+    }`,
+        undefined, { cache: 'no-store' });
 
   return {
     title:
