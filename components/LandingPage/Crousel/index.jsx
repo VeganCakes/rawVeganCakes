@@ -79,7 +79,7 @@ const Carousel = () => {
       id: 9,
       title: "Chocolate Bars",
       image: image8,
-      link: "/products/chocholate_cakes",
+      link: "/products/chocholate_bars",
       alternateText:"Raw Vegan Chocolate Bars"
 
     },
