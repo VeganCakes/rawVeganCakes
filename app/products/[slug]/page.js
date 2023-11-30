@@ -45,8 +45,8 @@ const Page = async ({ params }) => {
       ingredients,
       description,
       "slug": slug.current,
-    }`
-  );
+    }`,
+        undefined, { cache: 'no-store' });
 
   return (
     <main className="w-screen">
