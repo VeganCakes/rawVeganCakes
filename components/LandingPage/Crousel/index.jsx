@@ -87,7 +87,7 @@ const Carousel = () => {
       id: 10,
       title: "Dog Treats",
       image: "/Landing-Page/Dog-Treats.jpg",
-      link: "/",
+      link: "/products/dog-treats",
       alternateText:"Raw Vegan Dog Treats"
     },
   ];

@@ -7,6 +7,8 @@ export const product = defineType({
   initialValue: {
     newproduct: true,
     bestseller: false,
+    recommended: false,
+    dogtreats: false,
   },
   fields: [
     defineField({
@@ -57,6 +59,11 @@ export const product = defineType({
     {
       name: "bestseller",
       title: "Best Seller",
+      type: "boolean",
+    },
+    {
+      name: "dogtreats",
+      title: "Dog Treats",
       type: "boolean",
     },
     {
