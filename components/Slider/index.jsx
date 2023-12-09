@@ -11,6 +11,7 @@ import image5 from "../../images/carousel/mini_slider/raw_vegan _cake-013.jpg";
 import image6 from "../../images/carousel/mini_slider/raw_vegan_cake-014.jpg";
 import image7 from "../../images/carousel/mini_slider/raw_vegan_cake-015.jpg";
 import image8 from "../../images/carousel/mini_slider/raw_vegan_cake-016.jpg";
+
 import Slide from "./Slide";
 // import "./Slider.scss";
 
@@ -30,6 +31,7 @@ const Slider = () => {
     { id: 7, title: "Breakfast Bars", image: image6, slug: "breakfast_bars" },
     { id: 8, title: "Energy Bites", image: image7, slug: "energy_bites" },
     { id: 9, title: "Chocolate Bars", image: image8, slug: "chocholate_cakes" },
+    { id: 10, title: "Dog Treats", image: "/Landing-Page/Dog-Treats.jpg", slug: "dog-treats" },
   ];
 
   const scrollContainerRef = useRef(null);
